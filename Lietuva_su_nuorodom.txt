@@ -1,0 +1,31 @@
+Lietuva yra valstybė Vidurio Europoje, turinti turtingą istoriją ir kultūrą.
+Daugiau informacijos apie Lietuvą galima rasti Vikipedijoje:
+https://lt.wikipedia.org/wiki/Lietuva.
+
+Oficialus Vilniaus miesto puslapis yra https://www.govilnius.lt/,
+kuriame pateikiamos naujienos, renginiai ir kita naudinga informacija.
+
+Valstybinės institucijos dažnai naudoja domenus su .lt galūne,
+pavyzdžiui, seimas.lt arba vmi.lt.
+
+Taip pat internete gausu tarptautinių svetainių, tokių kaip
+https://www.google.com, http://example.org ar www.wikipedia.org.
+
+Kartais nuorodos būna prilipusios prie teksto, pvz.:
+Daugiau skaitykite čia:https://istorijatau.lt/rubrikos/zodynas/oberostas
+
+Egzistuoja ir mažiau įprasti domenai, tokie kaip:
+https://mano-puslapis.xyz/apie-mus
+arba test-site.net/kontaktai.
+
+Nevyriausybinės organizacijos dažnai naudoja .org domenus,
+pvz. https://www.redcross.org arba unesco.org.
+
+Kai kurios nuorodos gali būti su http protokolu:
+http://oldsite.com/info.
+
+Taip pat pasitaiko nuorodų be protokolo:
+vu.lt, lrt.lt/naujienos, wikipedia.org.
+
+Tai yra paprastas testinis tekstas,
+skirtas URL paieškos ir teksto analizės programos testavimui.
