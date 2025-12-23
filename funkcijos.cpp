@@ -104,13 +104,6 @@ string isvalyti_zodi(const string& teis)
     return isvalytas;
 }
 
-static bool ar_tik_skaiciai(const string& zodis)
-{
-    for (char c : zodis)
-        if (c < '0' || c > '9')
-            return false;
-    return true;
-}
 static bool turi_raidziu(const string& zodis)
 {
     for (unsigned char c : zodis)
@@ -121,12 +114,7 @@ static bool turi_raidziu(const string& zodis)
     return false;
 }
 
-
-void zodziu_skaiciavimas(
-    const vector<string>& eilutes,
-    unordered_map<string, int>& kiek,
-    unordered_map<string, vector<int>>& zodzio_eilutes
-)
+void zodziu_skaiciavimas(const vector<string>& eilutes,unordered_map<string, int>& kiek,unordered_map<string, vector<int>>& zodzio_eilutes)
 {
     kiek.clear();
     zodzio_eilutes.clear();
@@ -148,10 +136,7 @@ void zodziu_skaiciavimas(
     }
 }
 
-void zodziu_surikiavimas(
-    const unordered_map<string, int>& kiek,
-    vector<pair<string, int>>& surikiuoti
-)
+void zodziu_surikiavimas(const unordered_map<string, int>& kiek,vector<pair<string, int>>& surikiuoti)
 {
     surikiuoti.clear();
 
@@ -167,11 +152,7 @@ void zodziu_surikiavimas(
         });
 }
 
-void zodziu_isvedimas_i_faila(
-    const string& kel,
-    const vector<pair<string, int>>& surikiuoti,
-    const unordered_map<string, vector<int>>& zodzio_eilutes
-)
+void zodziu_isvedimas_i_faila(const string& kel,const vector<pair<string, int>>& surikiuoti,const unordered_map<string, vector<int>>& zodzio_eilutes)
 {
     ofstream isvestis(kel);
     if (!isvestis.is_open()) return;
@@ -267,30 +248,24 @@ static bool yra_sar(const string& tld, const vector<string>& galunes)
     return false;
 }
 
-void nuorodu_istraukimas(
-    const vector<string>& eilutes,
-    const vector<string>& galunes,
-    vector<string>& nuorodos
-)
+void nuorodu_istraukimas(const vector<string>& eilutes,const vector<string>& galunes,vector<string>& nuorodos)
 {
     nuorodos.clear();
 
     regex url_regex(
         R"((https?://[^\s<>"']+|www\.[^\s<>"']+|[A-Za-z0-9-]+\.[A-Za-z]{2,}(?:/[^\s<>"']*)?))",
-        std::regex::icase
+        icase
     );
 
     for (int eilutes_nr = 0; eilutes_nr < (int)eilutes.size(); eilutes_nr++)
     {
         const string& eilute = eilutes[eilutes_nr];
-
         auto pradzia = sregex_iterator(eilute.begin(), eilute.end(), url_regex);
         auto pabaiga = sregex_iterator();
 
         for (auto it = pradzia; it != pabaiga; ++it)
         {
             string url = (*it).str();
-            url = url_galas(url);
 
             if (url.empty()) continue;
 
@@ -314,7 +289,6 @@ void nuorodu_istraukimas(
             if (!yra) nuorodos.push_back(url);
         }
     }
-
     sort(nuorodos.begin(), nuorodos.end());
 }
 
