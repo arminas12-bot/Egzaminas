@@ -32,6 +32,7 @@ using std::tolower;
 using std::ispunct;
 using std::isalpha;
 using std::endl;
+using std::regex_constants::icase;
 
 bool nuskaityti_teksta_is_failo(const string& kel, vector<string>& eilutes);
 bool nuskaityti_galunes_is_failo(const string& kel, vector<string>& galunes);
